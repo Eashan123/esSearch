@@ -63,6 +63,8 @@ def sentenceSimilaritybyNN(es, sent):
 
 
 app = Flask(__name__)
+es = connect2ES();
+embed = hub.load(config.model_path)
 
 @app.route('/search/<query>')
 def search(query):
